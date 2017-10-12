@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Newspaper</string>
+    <string name="login_emailField_hint">Enter your email</string>
+    <string name="login_passwordField_hint">Enter your password</string>
+    <string name="social_login_header">Login with one click</string>
+    <string name="facebook_app_id">1640788872662751</string>
+</resources>

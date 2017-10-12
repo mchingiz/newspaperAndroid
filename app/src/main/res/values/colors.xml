@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="login_button_background">#3473f9</color>
     <color name="login_button_text_color">#ffffff</color>
+    <color name="social_login_header_line">#757474</color>
 </resources>

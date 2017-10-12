@@ -3,7 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="login_button_background">#3473f9</color>
     <color name="login_button_text_color">#ffffff</color>
+
+    <color name="register_button_text_color">#3566f9</color>
+    <color name="register_button_bg">#dbdbdb</color>
+
     <color name="social_login_header_line">#757474</color>
 </resources>

@@ -5,78 +5,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="25dp"
     tools:context="com.example.chingizmammadli.newspaper.MainActivity">
 
-    <EditText
-        android:id="@+id/login_email"
-        android:inputType="textEmailAddress"
-        android:hint="@string/login_emailField_hint"
-
-        android:layout_marginTop="30dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
+        android:padding="25dp">
 
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
-
-    <EditText
-        android:id="@+id/login_password"
-        android:inputType="textPassword"
-        android:hint="@string/login_passwordField_hint"
-
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
-
-    <Button
-        android:id="@+id/login_button"
-        android:text="Login"
-        android:background="@drawable/shape_with_corner_radius"
-        android:textColor="@color/login_button_text_color"
-        android:layout_gravity="right"
-
-        android:layout_marginTop="20dp"
-        android:layout_width="150dp"
-        android:layout_height="50dp" />
-
-    <RelativeLayout
-        android:layout_marginTop="60dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
-
-        <TextView
-            android:id="@+id/social_login_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="@string/social_login_header"
-            android:textColor="#000000"/>
-
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:layout_toLeftOf="@id/social_login_header"
-            android:background="@color/social_login_header_line"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
-            android:layout_toRightOf="@id/social_login_header"
-            android:background="@color/social_login_header_line"
-            />
+            <EditText
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
 
-    </RelativeLayout>
+                android:layout_marginTop="30dp"
+                android:hint="@string/login_emailField_hint"
+                android:inputType="textEmailAddress"
+
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+
+                android:layout_marginTop="10dp"
+                android:hint="@string/login_passwordField_hint"
+                android:inputType="textPassword"
+
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:id="@+id/register_button"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="20dp"
+
+                        android:background="@drawable/register_button_bg"
+                        android:text="Register"
+                        android:textColor="@color/register_button_text_color" />
+
+                    <Button
+                        android:id="@+id/login_button"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+
+                        android:background="@drawable/login_button_bg"
+                        android:text="Login"
+                        android:textColor="@color/login_button_text_color" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="60dp">
+
+                <TextView
+                    android:id="@+id/social_login_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/social_login_header"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toLeftOf="@id/social_login_header"
+                    android:background="@color/social_login_header_line" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_toRightOf="@id/social_login_header"
+                    android:background="@color/social_login_header_line" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>

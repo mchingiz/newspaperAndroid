@@ -11,4 +11,8 @@
     <color name="register_button_bg">#dbdbdb</color>
 
     <color name="social_login_header_line">#757474</color>
+
+    <color name="news_item_headline">#212121</color>
+    <color name="news_item_category">#9E9E9E</color>
+    <color name="news_item_datetime">#9E9E9E</color>
 </resources>

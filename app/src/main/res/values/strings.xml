@@ -4,6 +4,9 @@
     <string name="login_passwordField_hint">Enter your password</string>
     <string name="social_login_header">Login with one click</string>
     <string name="title_activity_news">NewsActivity</string>
+
+    <string name="api_key">9864f2bd78824c42bac9ae912619e301</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

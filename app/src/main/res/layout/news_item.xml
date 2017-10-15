@@ -11,7 +11,6 @@
 
 
         <ImageView
-            android:id="@+id/image"
             android:layout_gravity="center_horizontal"
             android:layout_width="100dp"
             android:layout_height="match_parent"
@@ -29,7 +28,6 @@
             android:weightSum="100">
 
             <TextView
-                android:id="@+id/news_item_headline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="80"
@@ -47,7 +45,6 @@
                 android:layout_weight="20">
 
                 <TextView
-                    android:id="@+id/news_item_category"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/news_item_category"
@@ -64,11 +61,77 @@
                     />
 
                 <TextView
-                    android:id="@+id/news_item_datetime"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textColor="@color/news_item_datetime"
                     android:text="21:00"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:src="@drawable/news_image2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="80"
+
+                android:ellipsize="end"
+                android:maxLines="3"
+
+                android:textColor="@color/news_item_headline"
+                android:textSize="18dp"
+                android:text="Resad Sadiqov: Hec kime borcum yoxdur"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/news_item_category"
+
+                    android:text="Sport"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="•"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/news_item_datetime"
+                    android:text="19:52"/>
             </LinearLayout>
 
         </LinearLayout>

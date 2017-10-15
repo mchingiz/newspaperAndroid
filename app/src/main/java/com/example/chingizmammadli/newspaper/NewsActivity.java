@@ -22,28 +22,9 @@ public class NewsActivity extends AppCompatActivity {
     }
 
     private void getNews() throws IOException {
-        String url = "https://newsapi.org/v1/articles?apiKey="+apiKey;
-        URL newsApiEndpoint = new URL(url);
-
-        HttpsURLConnection myConnection = (HttpsURLConnection) newsApiEndpoint.openConnection();
-
-        myConnection.setRequestProperty("User-Agent", "my-rest-app-v0.1");
-
-        if (myConnection.getResponseCode() == 200) {
-            // Success
-            // Further processing here
-        } else {
-            InputStream responseBody = myConnection.getInputStream();
-            InputStreamReader responseBodyReader =
-                    new InputStreamReader(responseBody, "UTF-8");
-            JsonReader jsonReader = new JsonReader(responseBodyReader);
-            String server_response = EntityUtils.toString(response.getEntity());
-
-            //Process json
-
-            jsonReader.close();
-        }
-
-        myConnection.disconnect();
+//        HttpClient client = new DefaultHttpClient();
+//        HttpGet request = new HttpGet();
+//        request.setURI(new URI("https://www.googleapis.com/shopping/search/v1/public/products/?key={my_key}&country=&q=t-shirts&alt=json&rankByrelevancy="));
+//        response = client.execute(request);
     }
 }

@@ -9,13 +9,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="25dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="25dp">
 
 
             <TextView
@@ -23,58 +23,96 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Registration"
+                android:layout_marginBottom="20dp"
 
                 android:textColor="@color/colorPrimary"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:layout_marginLeft="5dp"
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp" />
 
             <EditText
                 android:id="@+id/register_name"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="45dp"
 
-                android:layout_marginTop="30dp"
-                android:hint="Your name"
                 android:inputType="text"
 
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="0dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Surname:"
+                android:layout_marginLeft="5dp"
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp" />
 
             <EditText
                 android:id="@+id/register_surname"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:hint="Your surname"
+                android:layout_height="45dp"
                 android:inputType="text"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="0dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:layout_marginLeft="5dp"
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp" />
+
             <EditText
                 android:id="@+id/register_email"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:hint="Your email"
+                android:layout_height="45dp"
                 android:inputType="textEmailAddress"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="0dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:layout_marginLeft="5dp"
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp" />
+
             <EditText
                 android:id="@+id/register_password"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:hint="Your password"
+                android:layout_height="45dp"
                 android:inputType="textPassword"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="0dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password:"
+                android:layout_marginLeft="5dp"
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp" />
+
             <EditText
                 android:id="@+id/register_passwordConfirmation"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
-                android:hint="Confirm your password"
+                android:layout_height="45dp"
                 android:inputType="textPassword"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="0dp" />

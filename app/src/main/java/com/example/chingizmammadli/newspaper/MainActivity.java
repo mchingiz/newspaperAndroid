@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // onClick funksiyasindan idare eleyek
         Button registerButton = (Button)findViewById(R.id.loginScreen_registerButton);
         registerButton.setOnClickListener(this);
+
         Button loginButton = (Button)findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
 
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.login_button: {
                 Toast.makeText(this, "Clicked on Login", Toast.LENGTH_LONG).show();
 
-                Intent registerIntent = new Intent(MainActivity.this,NewsActivity.class);
-                startActivity(registerIntent);
+                Intent newsIntent = new Intent(MainActivity.this,NewsActivity.class);
+                startActivity(newsIntent);
                 finish();
                 break;
             }

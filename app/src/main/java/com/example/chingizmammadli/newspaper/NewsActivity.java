@@ -56,5 +56,6 @@ public class NewsActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent newsItemIntent = new Intent(NewsActivity.this,NewsItemActivity.class);
         startActivity(newsItemIntent);
+
     }
 }

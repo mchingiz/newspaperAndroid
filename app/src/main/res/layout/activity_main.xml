@@ -51,13 +51,13 @@
                     android:layout_marginTop="20dp">
 
                     <Button
-                        android:id="@+id/register_button"
+                        android:id="@+id/loginScreen_registerButton"
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_alignParentLeft="true"
                         android:layout_marginTop="20dp"
 
-                        android:background="@drawable/register_button_bg"
+                        android:background="@drawable/white_bg"
                         android:text="Register"
                         android:textColor="@color/register_button_text_color" />
 
@@ -68,7 +68,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="20dp"
 
-                        android:background="@drawable/login_button_bg"
+                        android:background="@drawable/blue_bg"
                         android:text="Login"
                         android:textColor="@color/login_button_text_color" />
                 </RelativeLayout>

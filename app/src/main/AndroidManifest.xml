@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".NewsActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".NewsItemActivity"></activity>
+        <activity android:name=".NewsItemActivity" />
+        <activity android:name=".TestActivity"></activity>
     </application>
 
 </manifest>

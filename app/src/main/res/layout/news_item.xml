@@ -23,7 +23,7 @@
         android:layout_gravity="center_horizontal"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/news_image" />
+        android:src="@drawable/image_placeholder" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,22 +1,31 @@
 package com.example.chingizmammadli.newspaper;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.chingizmammadli.newspaper.News;
 import com.example.chingizmammadli.newspaper.R;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 import static android.R.attr.data;
 import static android.webkit.ConsoleMessage.MessageLevel.LOG;
+import static com.example.chingizmammadli.newspaper.R.id.response;
 
 public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListener{
     private ArrayList<News> newsArray;
@@ -26,6 +35,7 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
         TextView headline;
         TextView time;
         TextView author;
+        ImageView image;
     }
 
     public NewsAdapter(ArrayList<News> data, Context context){
@@ -56,9 +66,9 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
     public View getView(int position, View convertView, ViewGroup parent) {
         Log.v("NEWS","getView "+position);
         // Get the data item for this position
-        News newsObject = getItem(position);
+        final News newsObject = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
-        NewsHolder newsHolder; // view lookup cache stored in tag
+        final NewsHolder newsHolder; // view lookup cache stored in tag
 
         final View result;
 
@@ -70,6 +80,7 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
             newsHolder.headline = (TextView) convertView.findViewById(R.id.news_item_headline);
             newsHolder.author = (TextView) convertView.findViewById(R.id.news_item_author);
             newsHolder.time = (TextView) convertView.findViewById(R.id.news_item_time);
+            newsHolder.image = (ImageView) convertView.findViewById(R.id.news_item_image);
 
             result=convertView;
 
@@ -80,7 +91,37 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
         }
 //        lastPosition = position;
 
-        Log.v("NEWS","line 71 "+newsObject.headline);
+//        Log.v("NEWS","line 71 "+newsObject.headline);
+        Log.v("NEWS","Image url "+newsObject.image);
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL(newsObject.image);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setDoInput(true);
+                    connection.connect();
+                    InputStream input = connection.getInputStream();
+                    final Bitmap newsBitmap = BitmapFactory.decodeStream(input);
+
+                    newsHolder.image.post(new Runnable()
+                    {
+                        public void run()
+                        {
+                            if(newsBitmap !=null)
+                            {
+                                newsHolder.image.setImageBitmap(newsBitmap);
+                            }
+                        }
+                    });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.e("Exception",e.getMessage());
+                }
+            }
+        }).start();
         newsHolder.headline.setText(newsObject.headline);
         newsHolder.author.setText(newsObject.author);
         newsHolder.time.setText(newsObject.time);
@@ -90,5 +131,23 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
 //        newsHolder.info.setTag(position);
         // Return the completed view to render on screen
         return convertView;
+    }
+
+    public static Bitmap getBitmapFromUrl(String src){
+        try {
+            Log.e("src",src);
+            URL url = new URL(src);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            Log.e("Bitmap","returned");
+            return myBitmap;
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e("Exception",e.getMessage());
+            return null;
+        }
     }
 }

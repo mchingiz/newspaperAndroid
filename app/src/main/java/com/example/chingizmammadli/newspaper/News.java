@@ -1,21 +1,18 @@
 package com.example.chingizmammadli.newspaper;
 
+import android.util.Log;
+
 public class News {
-    private String headline;
-    private String body;
-    private String image;
-    private String category;
-    private String dateTime;
+    public String headline;
+    public String body;
+    public String image;
+    public String author;
+    public String time;
 
-    public News(String headline){
+    public News(String headline,String author,String time){
         this.headline = headline;
-    }
-
-    public String getHeadline(){
-        return this.headline;
-    }
-
-    public void setHeadline(String headline){
-        this.headline = headline;
+        this.author = author;
+        this.time = time;
+        Log.v("NEWS","News constructor "+headline);
     }
 }

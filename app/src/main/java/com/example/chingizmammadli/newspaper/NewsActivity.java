@@ -38,20 +38,18 @@ public class NewsActivity extends AppCompatActivity{
 
         RetrieveData networkProcess = new RetrieveData();
         networkProcess.execute();
-
-//        LinearLayout news_item = (LinearLayout) findViewById(R.id.news_item);
-//        news_item.setOnClickListener(this);
     }
 
 
     class RetrieveData extends AsyncTask<Void, Void, String> {
+        private String api = "https://newsapi.org/v1/articles?source=techcrunch&apiKey=9864f2bd78824c42bac9ae912619e301";
 
         @Override
         protected String doInBackground(Void... voids) {
             Log.v("NEWS","RetrieveData doInBackground");
 
             try{
-                URL url = new URL("https://newsapi.org/v1/articles?source=techcrunch&apiKey=9864f2bd78824c42bac9ae912619e301");
+                URL url = new URL(api);
                 HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
 
                 try{
@@ -63,6 +61,8 @@ public class NewsActivity extends AppCompatActivity{
                         stringBuilder.append(line).append("\n");
                     }
                     bufferedReader.close();
+
+                    Log.v("NEWS",stringBuilder.toString());
 
                     return stringBuilder.toString();
                 }finally{
@@ -83,7 +83,6 @@ public class NewsActivity extends AppCompatActivity{
             Log.i("INFO",response);
 
             try{
-                String emptyString = "";
                 ArrayList<News> newsArray = new ArrayList<>();
                 JSONObject jObject = new JSONObject(response);
                 String source = jObject.getString("source");
@@ -91,7 +90,6 @@ public class NewsActivity extends AppCompatActivity{
                 JSONArray articles = jObject.getJSONArray("articles");
 
                 for(int i=0;i<articles.length();i++){
-//                    emptyString += articles.getJSONObject(i).getString("author")+"\n";
                     String headline = articles.getJSONObject(i).getString("title");
                     Log.v("NEWS","Adding article to array: "+headline);
                     String author = articles.getJSONObject(i).getString("author");
@@ -108,8 +106,6 @@ public class NewsActivity extends AppCompatActivity{
                 }
 
                 Log.v("NEWS","newsArray length: "+newsArray.size());
-
-//                newsArray = new ArrayList<>();
 
                 ListView newsList = (ListView) findViewById(R.id.news_list);
                 NewsAdapter adapter = new NewsAdapter(newsArray,getApplicationContext());
@@ -130,6 +126,7 @@ public class NewsActivity extends AppCompatActivity{
                         newsItemIntent.putExtra("body",news.body);
                         newsItemIntent.putExtra("date",news.date);
                         newsItemIntent.putExtra("time",news.time);
+                        newsItemIntent.putExtra("image",news.image);
                         startActivity(newsItemIntent);
 
 //                Toast.makeText(getBaseContext(), news.headline,Toast.LENGTH_LONG).show();

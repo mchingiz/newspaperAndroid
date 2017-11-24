@@ -99,7 +99,7 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
             @Override
             public void run() {
                 try {
-                    URL url = new URL(newsObject.image);
+                    URL url = new URL(newsObject.image+"?w=141&h=102&crop=1");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setDoInput(true);
                     connection.connect();

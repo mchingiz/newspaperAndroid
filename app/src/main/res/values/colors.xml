@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
 
     <color name="login_button_background">#3473f9</color>
     <color name="login_button_text_color">#ffffff</color>
@@ -15,4 +16,6 @@
     <color name="news_item_headline">#212121</color>
     <color name="news_item_category">#9E9E9E</color>
     <color name="news_item_datetime">#9E9E9E</color>
+
+    <color name="category_title">#ffffff</color>
 </resources>

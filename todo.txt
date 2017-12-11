@@ -1,8 +1,10 @@
-loading
-internet check
+loading +
+internet check 
 kateqoriya
 logout
 change pass
 username->name
 about
 share
+
+text to speech(maybe)

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    tools:context="com.example.chingizmammadli.newspaper.CategoryActivity"
+    android:weightSum="1.0">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.5"
+        android:weightSum="1.0">
+
+        <FrameLayout
+            android:id="@+id/category_id_4"
+            android:onClick="openCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/trump" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@+id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Siyasət"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:onClick="openCategory"
+            android:id="@+id/category_id_15"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/war" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Hərbi"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:onClick="openCategory"
+            android:id="@+id/category_id_6"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/world" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Dünya"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:onClick="openCategory"
+            android:id="@+id/category_id_10"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/art" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Mədəniyyət"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.5"
+        android:weightSum="1.0">
+
+        <FrameLayout
+            android:id="@+id/category_id_9"
+            android:onClick="openCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/sport" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="İdman"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/category_id_7"
+            android:onClick="openCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/stock2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="İqtisadiyyat"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/category_id_5"
+            android:onClick="openCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/news" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Xəbər"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/category_id_17"
+            android:onClick="openCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="0dip"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@id/category_image"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/analytics" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/black_gradient"/>
+
+            <TextView
+                android:id="@id/category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Təhlil"
+                android:textSize="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/category_title"
+                android:layout_gravity="center_horizontal|bottom" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

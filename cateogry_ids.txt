@@ -1,0 +1,11 @@
+const categories = [
+    { title: 'Siyas?t', id: 4 },
+    { title: 'X?b?r', id: 5 },
+    { title: 'Dünya', id: 6 },
+    { title: 'Iqtisadiyyat', id: 7 },
+    { title: 'Idman', id: 9 },
+    { title: 'M?d?niyy?t', id: 10 },
+    { title: 'H?rbi', id: 15 },
+    { title: 'T?hlil', id: 17 },
+    // { title: 'Bu günün x?b?rl?ri', id: 18 }
+];

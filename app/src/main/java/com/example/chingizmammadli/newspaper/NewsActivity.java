@@ -1,5 +1,6 @@
 package com.example.chingizmammadli.newspaper;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
@@ -30,11 +31,21 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class NewsActivity extends AppCompatActivity{
     private String apiKey = "9864f2bd78824c42bac9ae912619e301";
+    private ProgressDialog progress;
+    private String category_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+
+        category_id = getIntent().getStringExtra("category_id");
+
+        progress = new ProgressDialog(this);
+        progress.setTitle("Yüklənir");
+        progress.setMessage("Zəhmət olmasa gözləyin...");
+        progress.setCancelable(false);
+        progress.show();
 
         RetrieveData networkProcess = new RetrieveData();
         networkProcess.execute();
@@ -42,11 +53,11 @@ public class NewsActivity extends AppCompatActivity{
 
 
     class RetrieveData extends AsyncTask<Void, Void, String> {
-        private String api = "https://newsapi.org/v1/articles?source=techcrunch&apiKey=9864f2bd78824c42bac9ae912619e301";
+        private String api = "https://apa.az/api/topNewsByCategory?categoryId="+category_id+"&count=10&api_key=d3213802bb7872cec739c1c845e2f8bb";
 
         @Override
         protected String doInBackground(Void... voids) {
-            Log.v("NEWS","RetrieveData doInBackground");
+            Log.v("TEST","RetrieveData doInBackground");
 
             try{
                 URL url = new URL(api);
@@ -58,11 +69,12 @@ public class NewsActivity extends AppCompatActivity{
                     String line;
 
                     while((line = bufferedReader.readLine()) != null){
+                        Log.v("TEST",line);
                         stringBuilder.append(line).append("\n");
                     }
                     bufferedReader.close();
 
-                    Log.v("NEWS",stringBuilder.toString());
+                    Log.v("TEST",stringBuilder.toString());
 
                     return stringBuilder.toString();
                 }finally{
@@ -71,30 +83,30 @@ public class NewsActivity extends AppCompatActivity{
             }catch(Exception e){
                 Log.e("ERROR",e.getMessage(),e);
                 return null;
+            }finally{
+                progress.dismiss();
             }
         }
 
         protected void onPostExecute(String response){
-            Log.v("NEWS","RetrieveData onPostExecute");
+            Log.v("TEST","RetrieveData onPostExecute");
             if(response == null){
                 response = "There was an error";
             }
-
-            Log.i("INFO",response);
+            Log.v("TEST",response);
 
             try{
                 ArrayList<News> newsArray = new ArrayList<>();
-                JSONObject jObject = new JSONObject(response);
-                String source = jObject.getString("source");
+                JSONArray articles = new JSONArray(response);
 
-                JSONArray articles = jObject.getJSONArray("articles");
+//                JSONArray articles = jsonArray.getJSONArray("articles");
 
                 for(int i=0;i<articles.length();i++){
                     String headline = articles.getJSONObject(i).getString("title");
-                    Log.v("NEWS","Adding article to array: "+headline);
+                    Log.v("TEST","Adding article to array: "+headline);
                     String author = articles.getJSONObject(i).getString("author");
-                    String body = articles.getJSONObject(i).getString("description");
-                    String image = articles.getJSONObject(i).getString("urlToImage");
+                    String body = articles.getJSONObject(i).getString("body");
+                    String image = articles.getJSONObject(i).getString("image");
                     String publishedAt = articles.getJSONObject(i).getString("publishedAt");
 
                     String[] datetimeParts = publishedAt.split("T"); // String array, each element is text between dots
@@ -105,7 +117,7 @@ public class NewsActivity extends AppCompatActivity{
                     newsArray.add(new News(headline,body,author,image,date,time));
                 }
 
-                Log.v("NEWS","newsArray length: "+newsArray.size());
+                Log.v("TEST","newsArray length: "+newsArray.size());
 
                 ListView newsList = (ListView) findViewById(R.id.news_list);
                 NewsAdapter adapter = new NewsAdapter(newsArray,getApplicationContext());
@@ -115,7 +127,7 @@ public class NewsActivity extends AppCompatActivity{
                 newsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Log.v("NEWS","News clicked");
+                        Log.v("TEST","News clicked");
 
                         News news = (News) parent.getItemAtPosition(position);
                         Toast.makeText(getBaseContext(),"Will open news",Toast.LENGTH_SHORT).show();
@@ -138,10 +150,5 @@ public class NewsActivity extends AppCompatActivity{
                 Log.e("ERROR",e.getMessage(),e);
             }
         }
-    }
-
-    @Override
-    public void onBackPressed(){
-        moveTaskToBack(true);
     }
 }

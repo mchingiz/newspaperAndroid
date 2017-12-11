@@ -1,15 +1,10 @@
 loading +
 internet check
 kateqoriya +
-logout
-change pass
 username->name +
-about
-share
-
+MENU:
+    about
+    logout
+    change pass
+share news
 text to speech(maybe)
-
-
-
-Notes:
-menu -> logout,change pass,about.

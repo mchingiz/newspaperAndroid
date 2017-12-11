@@ -1,10 +1,15 @@
 loading +
-internet check 
-kateqoriya
+internet check
+kateqoriya +
 logout
 change pass
-username->name
+username->name +
 about
 share
 
 text to speech(maybe)
+
+
+
+Notes:
+menu -> logout,change pass,about.

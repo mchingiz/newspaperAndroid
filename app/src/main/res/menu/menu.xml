@@ -1,0 +1,19 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_about"
+        android:title="About"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/menu_change_profile"
+        android:title="Change profile data">
+    </item>
+
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Logout">
+    </item>
+
+</menu>

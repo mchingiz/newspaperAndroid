@@ -1,3 +1,5 @@
+----- Tasks -----
+
 loading +
 internet check
 kateqoriya +
@@ -8,3 +10,6 @@ MENU:
     change pass
 share news
 text to speech(maybe)
+
+----- Bugs -----
+Images change in listView on scroll

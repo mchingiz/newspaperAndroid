@@ -73,40 +73,6 @@
                         android:textColor="@color/login_button_text_color" />
                 </RelativeLayout>
             </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="60dp">
-
-                <TextView
-                    android:id="@+id/social_login_header"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/social_login_header"
-                    android:textColor="#000000" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toLeftOf="@id/social_login_header"
-                    android:background="@color/social_login_header_line" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_toRightOf="@id/social_login_header"
-                    android:background="@color/social_login_header_line" />
-
-            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 

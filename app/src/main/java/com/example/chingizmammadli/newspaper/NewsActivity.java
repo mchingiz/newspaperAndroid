@@ -44,8 +44,8 @@ public class NewsActivity extends AppCompatActivity{
         category_id = getIntent().getStringExtra("category_id");
 
         progress = new ProgressDialog(this);
-        progress.setTitle("Yüklənir");
-        progress.setMessage("Zəhmət olmasa gözləyin...");
+        progress.setTitle("Loading");
+        progress.setMessage("Please wait...");
         progress.setCancelable(false);
         progress.show();
 
@@ -55,7 +55,8 @@ public class NewsActivity extends AppCompatActivity{
 
 
     class RetrieveData extends AsyncTask<Void, Void, String> {
-        private String api = "https://apa.az/api/topNewsByCategory?categoryId="+category_id+"&count=10&api_key=d3213802bb7872cec739c1c845e2f8bb";
+//        private String api = "https://apa.az/api/topNewsByCategory?categoryId="+category_id+"&count=10&api_key=d3213802bb7872cec739c1c845e2f8bb";
+        private String api = "http://0072ddf8.ngrok.io/dummy/fakeNewsApi.php?category_id="+category_id;
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -99,9 +100,8 @@ public class NewsActivity extends AppCompatActivity{
 
             try{
                 ArrayList<News> newsArray = new ArrayList<>();
+                Log.v("DUMP",response);
                 JSONArray articles = new JSONArray(response);
-
-//                JSONArray articles = jsonArray.getJSONArray("articles");
 
                 for(int i=0;i<articles.length();i++){
                     String headline = articles.getJSONObject(i).getString("title");
@@ -111,7 +111,7 @@ public class NewsActivity extends AppCompatActivity{
                     String image = articles.getJSONObject(i).getString("image");
                     String publishedAt = articles.getJSONObject(i).getString("publishedAt");
 
-                    String[] datetimeParts = publishedAt.split("T"); // String array, each element is text between dots
+                    String[] datetimeParts = publishedAt.split("T");
 
                     String date = datetimeParts[0];
                     String time = datetimeParts[1].substring(0,5);
@@ -143,9 +143,6 @@ public class NewsActivity extends AppCompatActivity{
                         newsItemIntent.putExtra("image",news.image);
                         startActivity(newsItemIntent);
 
-//                Toast.makeText(getBaseContext(), news.headline,Toast.LENGTH_LONG).show();
-
-//                Snackbar.make(view, news.headline, Snackbar.LENGTH_LONG).setAction("No action", null).show();
                     }
                 });
             }catch(Exception e){

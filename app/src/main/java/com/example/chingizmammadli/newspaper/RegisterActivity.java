@@ -25,12 +25,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Butun click listenerleri bu qayda ile elave olunsun ki, hamisini asagidaki
-        // onClick funksiyasindan idare eleyek
         Button registerButton = (Button)findViewById(R.id.submit_button);
         registerButton.setOnClickListener(this);
 
-        db = openOrCreateDatabase("dictionary",MODE_PRIVATE,null);
+        db = openOrCreateDatabase("newspaper_users",MODE_PRIVATE,null);
 
         // Passwordun hinti basqa fontda cixirdi,onu duzeltmisem
         EditText password = (EditText) findViewById(R.id.register_password);
@@ -113,7 +111,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         if(cursor != null & cursor.getCount() > 0){
             while(cursor.moveToNext()){
-//                String username = cursor.getString(cursor.getColumnIndex("name"));
                 String email = cursor.getString(cursor.getColumnIndex("email"));
                 String password = cursor.getString(cursor.getColumnIndex("password"));
 

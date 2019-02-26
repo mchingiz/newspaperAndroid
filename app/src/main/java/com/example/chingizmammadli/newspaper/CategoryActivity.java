@@ -20,7 +20,6 @@ public class CategoryActivity extends AppCompatActivity {
     public void openCategory(View v){
         String categoryId = getResources().getResourceName(v.getId());
         Log.v("TEST", categoryId);
-//        Toast.makeText(getBaseContext(),getCategoryId(v),Toast.LENGTH_SHORT).show();
 
         Intent newsIntent = new Intent(CategoryActivity.this,NewsActivity.class);
         newsIntent.putExtra("category_id",getCategoryId(v));

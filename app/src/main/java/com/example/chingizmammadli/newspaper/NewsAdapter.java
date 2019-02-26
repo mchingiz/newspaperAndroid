@@ -60,15 +60,12 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
         Toast.makeText(getContext().getApplicationContext(), news.headline,Toast.LENGTH_LONG).show();
     }
 
-//    private int lastPosition = -1;
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Log.v("NEWS","getView "+position);
-        // Get the data item for this position
-        final News newsObject = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        final NewsHolder newsHolder; // view lookup cache stored in tag
+
+        final News newsObject = getItem(position); // Get the data item for this position
+        final NewsHolder newsHolder; // Check if an existing view is being reused, otherwise inflate the view
 
         final View result;
 
@@ -89,9 +86,7 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
             newsHolder = (NewsHolder) convertView.getTag();
             result=convertView;
         }
-//        lastPosition = position;
 
-//        Log.v("NEWS","line 71 "+newsObject.headline);
         Log.v("NEWS","Image url "+newsObject.image);
 
 
@@ -125,11 +120,7 @@ public class NewsAdapter extends ArrayAdapter<News> implements View.OnClickListe
         newsHolder.headline.setText(newsObject.headline);
         newsHolder.author.setText(newsObject.author);
         newsHolder.time.setText(newsObject.time);
-//        newsHolder.txtType.setText(newsObject.getType());
-//        newsHolder.txtVersion.setText(newsObject.getVersion_number());
-//        viewHolder.info.setOnClickListener(this);
-//        newsHolder.info.setTag(position);
-        // Return the completed view to render on screen
+
         return convertView;
     }
 

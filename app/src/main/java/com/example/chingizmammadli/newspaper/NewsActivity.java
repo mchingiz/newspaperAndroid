@@ -55,8 +55,7 @@ public class NewsActivity extends AppCompatActivity{
 
 
     class RetrieveData extends AsyncTask<Void, Void, String> {
-//        private String api = "https://apa.az/api/topNewsByCategory?categoryId="+category_id+"&count=10&api_key=d3213802bb7872cec739c1c845e2f8bb";
-        private String api = "http://0072ddf8.ngrok.io/dummy/fakeNewsApi.php?category_id="+category_id;
+        private String api = "http://da123715.ngrok.io/dummy/fakeNewsApi.php?category_id="+category_id;
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -132,7 +131,7 @@ public class NewsActivity extends AppCompatActivity{
                         Log.v("TEST","News clicked");
 
                         News news = (News) parent.getItemAtPosition(position);
-                        Toast.makeText(getBaseContext(),"Will open news",Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getBaseContext(),"Will open news",Toast.LENGTH_SHORT).show();
 
                         Intent newsItemIntent = new Intent(NewsActivity.this,NewsItemActivity.class);
                         newsItemIntent.putExtra("headline",news.headline);
